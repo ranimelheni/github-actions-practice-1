@@ -1,4 +1,16 @@
-name: Event Filters
+name: Event Filters Practice
+
 on:
+  push:
+    branches:
+      - dev
+      - 'release/*'
+    paths-ignore:
+      - 'docs/**'
 
 jobs:
+  test-filters:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show success message
+        run: echo "Event filters working! Triggered on ${{ github.ref_name }} branch"
